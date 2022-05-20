@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>練習：費式數列函式</title>
+  </head>
+  <body>
+    <script>
+      let fibonacciGenerator = (a) => {
+        let result = [];
+        for (i = 0; i < a; i++) {
+          // 第三個數 為 第一個數 + 第二個數
+          if (result.length >= 2) {
+            result[i] = result[i - 2] + result[i - 1];
+            // console.log("sumi = ", result[i]);
+          } else {
+              result.push(i);
+          }
+        }
+        return result;
+      };
+      console.log(fibonacciGenerator(8));
+
+    </script>
+  </body>
+</html>
