@@ -9,8 +9,6 @@
 <body>
   <script>
     // 練習1: 函式的return + 箭頭函式
-    let age = 10;
-
     const handleAge = (age) => {
       if(age > 18) {
         return "成人";
@@ -20,12 +18,11 @@
         return "兒童";
       }
     }
-    // console.log(handleAge(age));
+    let result = handleAge(10);
+    console.log(result);
 
     // 練習2: 有引數的IIFE
-    let color = "pink";
-
-    (function (color) {
+    ((color) => {
       switch (color) {
         case "red":
           console.log("紅色");
@@ -36,8 +33,21 @@
         default:
           console.log("其他顏色");
       }
-    })(color);
+    })("pink");
   
+    (function () {
+      switch (color) {
+        case "red":
+          console.log("紅色");
+          break;
+        case "blue":
+          console.log("藍色");
+          break;
+        default:
+          console.log("其他顏色");
+      }
+    })("pink");
+    
   </script>
 </body>
 </html>
