@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>解構賦值 Destructing</title>
+</head>
+<body>
+  <script>
+    // 傳統
+    let alphabets = ['a', 'b', 'c'];
+    // let a = 'a';
+    // let b = 'b';
+    // let c = 'c';
+
+    // 解構賦值
+    let [a,b,c] = alphabets;
+    console.log(a);
+    console.log(b);
+    console.log(c);
+
+    // 陣列
+    let fruits = ['蘋果', '香蕉', '番茄', '檸檬', '葡萄'];
+    let [apple, banana, ,lemon] = fruits;
+    console.log(apple);
+    console.log(banana);
+    // console.log(tomato);
+    console.log(lemon);
+
+    // 物件
+    let countries = {
+      taiwan: '台灣',
+      japan: '日本',
+      china: '中國',
+      corea: '韓國',
+    }
+
+    let {japan , taiwan , corea: korea, china, us} = countries;
+    console.log(taiwan);
+    console.log(japan);
+    console.log(china);
+    console.log(korea);
+    // console.log(us); // undefined
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Array_Practice</title>
+  </head>
+  <body>
+    <script>
+	// 練習1
+    const animals = [
+        { id: "a1", en: "cat", cn: "貓", num: 30 },
+        { id: "a2", en: "dog", cn: "狗", num: 10 },
+        { id: "a3", en: "rabbit", cn: "兔", num: 5 },
+        { id: "a4", en: "bear", cn: "熊", num: 15 },
+        { id: "a5", en: "mouse", cn: "鼠", num: 20 },
+    ];
+
+	let newAnimals = animals.map((animal, index) => {
+		return {...animal, size: 'small'};
+	})
+	// console.log(newAnimals);
+
+	// 練習2
+	// 找到熊，將其size改為 ‘large’
+	let findBear = newAnimals.find((animal, index) => {
+		return animal.cn === '熊';
+	})
+	findBear.size = 'large';
+	// console.log(findBear);
+	// ----------------------------
+	// 用展開運算子在index = 2的資料後面新增一筆資料
+	let obj = {
+		id: 'a35',
+		en: 'pig',
+		cn: '豬',
+		num: 3,
+		size: 'medium',
+	};
+	// console.log(newAnimals)
+
+	let result = [];
+	newAnimals.forEach((animal, index) => {
+		result = [...result, animal];
+
+		if (index === 2) {
+			result = [...result, obj];
+		}
+	})
+	console.log(result);
+
+	// console.log(newAnimals);
+
+    </script>
+  </body>
+</html>
